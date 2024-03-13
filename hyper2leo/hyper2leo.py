@@ -35,7 +35,7 @@ def hyper_to_landsat_mss_4_5(range_min, range_max):
         return "The range entered is outside of ranges for Landsat OSS 4-5"
         
 def hyper_to_landsat_tm_4_5(range_min, range_max):
-    if range_max <= 12500 and range_min > 10400:
+    if range_max <= 12500 and range_min >= 10400:
         return f"The range {range_min} - {range_max} nanometers is Band 6 (the Thermal band) for Landsats TM 4-5"
     elif range_max <= 2350 and range_min > 2080:
         return f"The range {range_min} - {range_max} nanometers is Band 7 (the SWIR 2 band) for Landsats TM 4-5"
@@ -51,3 +51,8 @@ def hyper_to_landsat_tm_4_5(range_min, range_max):
         return f"The range {range_min} - {range_max} nanometers is Band 1 (the Blue band) for Landsats TM 4-5"         
     else:
         return "The range entered is outside of ranges for Landsat TM 4-5"
+    
+def hyper_to_landsat_etm_7(range_min, range_max):
+    if range_max <= 12500 and range_min >= 10400:
+        return f"The range {range_min} - {range_max} nanometers is Band 6 (the Thermal band) for Landsat ETM+ 7"
+    elif range_max <= 
