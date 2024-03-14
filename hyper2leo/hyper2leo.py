@@ -12,25 +12,25 @@ def fr_to_wv(frequency):
 
 def hyper_to_landsat_mss_1_3(range_min, range_max):
     if range_max <= 900 and range_min > 800:
-        return f"The range {range_min} - {range_max} nanometers is Band 7 (the NIR band) for Landsats OSS 1-3"
+        return f"The range {range_min} - {range_max} nanometers is Band 7 (the NIR band) for Landsats MSS 1-3"
     if range_max <= 800 and range_min > 700:
-        return f"The range {range_min} - {range_max} nanometers is Band 6 (the NIR band) for Landsats OSS 1-3"
+        return f"The range {range_min} - {range_max} nanometers is Band 6 (the NIR band) for Landsats MSS 1-3"
     elif range_max <= 700 and range_min >= 600:
-        return f"The range {range_min} - {range_max} nanometers is Band 5 (the Red band) for Landsats OSS 1-3"    
+        return f"The range {range_min} - {range_max} nanometers is Band 5 (the Red band) for Landsats MSS 1-3"    
     elif range_max <= 600 and range_min >= 500:
-        return f"The range {range_min} - {range_max} nanometers is in Band 4 (the Green band) for Landsats OSS 1-3"
+        return f"The range {range_min} - {range_max} nanometers is in Band 4 (the Green band) for Landsats MSS 1-3"
     else:
         return "The range entered is outside of ranges for Landsat OSS 1-3"
     
 def hyper_to_landsat_mss_4_5(range_min, range_max):
     if range_max <= 900 and range_min > 800:
-        return f"The range {range_min} - {range_max} nanometers is Band 4 (the NIR band) for Landsats OSS 4-5"
+        return f"The range {range_min} - {range_max} nanometers is Band 4 (the NIR band) for Landsats MSS 4-5"
     if range_max <= 800 and range_min > 700:
-        return f"The range {range_min} - {range_max} nanometers is Band 3 (the NIR band) for Landsats OSS 4-5"
+        return f"The range {range_min} - {range_max} nanometers is Band 3 (the NIR band) for Landsats MSS 4-5"
     elif range_max <= 700 and range_min >= 600:
-        return f"The range {range_min} - {range_max} nanometers is Band 2 (the Red band) for Landsats OSS 4-5"    
+        return f"The range {range_min} - {range_max} nanometers is Band 2 (the Red band) for Landsats MSS 4-5"    
     elif range_max <= 600 and range_min >= 500:
-        return f"The range {range_min} - {range_max} nanometers is in Band 1 (the Green band) for Landsats OSS 4-5"
+        return f"The range {range_min} - {range_max} nanometers is in Band 1 (the Green band) for Landsats MSS 4-5"
     else:
         return "The range entered is outside of ranges for Landsat OSS 4-5"
         
@@ -71,7 +71,8 @@ def hyper_to_landsat_etm_7(range_min, range_max):
         return f"The range {range_min} - {range_max} nanometers is Band 1 (the Blue band) for Landsat ETM+ 7" 
     
 def hyper_to_landsat_8_9(range_min, range_max):
-    if range_max < range_min
+    if range_max < range_min:
+        return f"The range "
 
 
 #MODIS NEXT
