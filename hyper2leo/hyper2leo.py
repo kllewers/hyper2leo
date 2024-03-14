@@ -51,12 +51,25 @@ def hyper_to_landsat_tm_4_5(range_min, range_max):
         return f"The range {range_min} - {range_max} nanometers is Band 1 (the Blue band) for Landsats TM 4-5"         
     else:
         return "The range entered is outside of ranges for Landsat TM 4-5"
-    
+
+#I need to figure out what to do about the panchromatic band...
+
 def hyper_to_landsat_etm_7(range_min, range_max):
     if range_max <= 12500 and range_min >= 10400:
         return f"The range {range_min} - {range_max} nanometers is Band 6 (the Thermal band) for Landsat ETM+ 7"
-    elif range_max <= 
-
+    elif range_max <= 2350 and range_min > 2090:
+        return f"The range {range_min} - {range_max} nanometers is Band 7 (the SWIR 2 band) for Landsat ETM+ 7"
+    elif range_max <= 1750 and range_min > 1550:
+        return f"The range {range_min} - {range_max} nanometers is Band 5 (the SWIR 1 band) for Landsat ETM+ 7"
+    elif range_max <= 900 and range_min > 770:
+        return f"The range {range_min} - {range_max} nanometers is Band 4 (the NIR band) for Landsat ETM+ 7"        
+    elif range_max <= 690 and range_min > 630:
+        return f"The range {range_min} - {range_max} nanometers is Band 3 (the Red band) for Landsat ETM+ 7" 
+    elif range_max <= 600 and range_min > 520:
+        return f"The range {range_min} - {range_max} nanometers is Band 2 (the Green band) for Landsat ETM+ 7" 
+    elif range_max <= 520 and range_min > 450:
+        return f"The range {range_min} - {range_max} nanometers is Band 1 (the Blue band) for Landsat ETM+ 7" 
+    
 def hyper_to_landsat_8_9(range_min, range_max):
     if range_max < range_min
 
