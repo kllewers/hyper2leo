@@ -14,7 +14,7 @@ def fr_to_wv(frequency: float or int) -> float or int:
 
 #LANDSAT
 
-def hyper_to_landsat_mss_1_3(range_min, range_max):
+def hyper_to_landsat_mss_1_3(range_min: float or int, range_max: float or int):
     if range_max <= 900 and range_min > 800:
         return f"The range {range_min} - {range_max} nanometers is Band 7 (the NIR band) for Landsats MSS 1-3"
     if range_max <= 800 and range_min > 700:
@@ -26,7 +26,7 @@ def hyper_to_landsat_mss_1_3(range_min, range_max):
     else:
         return "The range entered is outside of ranges for Landsat OSS 1-3"
     
-def hyper_to_landsat_mss_4_5(range_min, range_max):
+def hyper_to_landsat_mss_4_5(range_min: float or int, range_max: float or int):
     if range_max <= 900 and range_min > 800:
         return f"The range {range_min} - {range_max} nanometers is Band 4 (the NIR band) for Landsats MSS 4-5"
     if range_max <= 800 and range_min > 700:
@@ -38,7 +38,7 @@ def hyper_to_landsat_mss_4_5(range_min, range_max):
     else:
         return "The range entered is outside of ranges for Landsat OSS 4-5"
         
-def hyper_to_landsat_tm_4_5(range_min, range_max):
+def hyper_to_landsat_tm_4_5(range_min: float or int, range_max: float or int):
     if range_max <= 12500 and range_min >= 10400:
         return f"The range {range_min} - {range_max} nanometers is Band 6 (the Thermal band) for Landsats TM 4-5"
     elif range_max <= 2350 and range_min > 2080:
@@ -58,7 +58,7 @@ def hyper_to_landsat_tm_4_5(range_min, range_max):
 
 #I need to figure out what to do about the panchromatic band...
 
-def hyper_to_landsat_etm_7(range_min: float, range_max: float):
+def hyper_to_landsat_etm_7(range_min: float or int, range_max: float or int):
     if range_max and range_min > 430:
         if range_max <= 12500 and range_min >= 10400:
             return f"The range {range_min} - {range_max} nanometers is Band 6 (the Thermal band) for Landsat ETM+ 7"
@@ -129,7 +129,7 @@ for i in bands_range:
 
 
 #Sentinel2 based off of ESA Sentinel Handbook
-def hyper_to_sentinel2(range_min: float, range_max: float):
+def hyper_to_sentinel2(range_min: float or int, range_max: float or int):
     if range_max or range_min > 430:
         if range_max <=2280 and range_min >= 2100:
             return f"The range {range_min} - {range_max} nanometers is Band 12 (AOT determination) for Sentinel 2."
