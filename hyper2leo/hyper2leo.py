@@ -1,14 +1,14 @@
 #GENERAL FUNCTIONS
 
-def um_to_nm(um_measurement):
+def um_to_nm(um_measurement: float or int) -> float or int:
     nm_measurement = um_measurement * 1000
     return f"{nm_measurement} nm"
 
-def wv_to_fr(wavelength):
+def wv_to_fr(wavelength: float or int) -> float or int:
     frequency = 3e8/wavelength
     return frequency
     
-def fr_to_wv(frequency):
+def fr_to_wv(frequency: float or int) -> float or int:
     wavelength = 3e8/frequency
     return wavelength
 
@@ -58,7 +58,7 @@ def hyper_to_landsat_tm_4_5(range_min, range_max):
 
 #I need to figure out what to do about the panchromatic band...
 
-def hyper_to_landsat_etm_7(range_min, range_max):
+def hyper_to_landsat_etm_7(range_min: float, range_max: float):
     if range_max and range_min > 430:
         if range_max <= 12500 and range_min >= 10400:
             return f"The range {range_min} - {range_max} nanometers is Band 6 (the Thermal band) for Landsat ETM+ 7"
@@ -117,7 +117,7 @@ sentinel_info = [
 
 ]
 
-def sentinel_wavelengths(band_name, central_wv, bandwidth):
+def sentinel_wavelengths(band_name: str, central_wv: float, bandwidth: int):
     min_wv = central_wv - (bandwidth/2)
     max_wv = central_wv + (bandwidth/2)
     return [band_name, min_wv, max_wv]
@@ -129,7 +129,7 @@ for i in bands_range:
 
 
 #Sentinel2 based off of ESA Sentinel Handbook
-def hyper_to_sentinel2(range_min, range_max):
+def hyper_to_sentinel2(range_min: float, range_max: float):
     if range_max or range_min > 430:
         if range_max <=2280 and range_min >= 2100:
             return f"The range {range_min} - {range_max} nanometers is Band 12 (AOT determination) for Sentinel 2."
