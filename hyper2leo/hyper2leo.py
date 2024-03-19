@@ -122,4 +122,15 @@ def hyper_to_landsat_etm_7(range_min, range_max):
     if range_max < range_min:
         return f"The range " """
 
-#Sentinel Next
+#Sentinel2 based off of ESA Sentinel Handbook
+def hyper_to_sentinel2(range_min, range_max):
+    if range_max or range_min > 430:
+        if range_max < 2280 and range_min >= 2100:
+            return f"The range {range_min} - {range_max} nanometers is Band 12 (AOT determination) for Sentinel 2."
+        else:
+            return f"The range {range_min} - {range_max} nanometers is not in the range of Sentinel 2."
+    elif range_max or range_min < 400:
+        if range_max < 2.280 and range_min >= 2.100:
+            return f"The range {range_min} - {range_max} nanometers is Band 12 (AOT determination) for Sentinel 2."
+        else:
+            return f"The range {range_min} - {range_max} nanometers is not in the range of Sentinel 2."
