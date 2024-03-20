@@ -1,5 +1,4 @@
 #GENERAL FUNCTIONS
-
 def um_to_nm(um_measurement: float or int) -> float or int:
     nm_measurement = um_measurement * 1000
     return f"{nm_measurement} nm"
@@ -14,7 +13,7 @@ def fr_to_wv(frequency: float or int) -> float or int:
 
 #LANDSAT
 
-def hyper_to_landsat_mss_1_3(range_min: float or int, range_max: float or int):
+def hyper_to_landsat_mss_1_3(range_min: float, range_max: float or int):
     if range_max <= 900 and range_min > 800:
         return f"The range {range_min} - {range_max} nanometers is Band 7 (the NIR band) for Landsats MSS 1-3"
     if range_max <= 800 and range_min > 700:
