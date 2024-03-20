@@ -96,4 +96,6 @@ print(hyper_to_sentinel2(.2, .21))
 print(hyper_to_sentinel2(.57, .67))
 
 
-#Make a hyperspectral instrument specific function
+#Make a NEON hyperspectral instrument specific function
+
+#Move on to where DNs are on the curve
