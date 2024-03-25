@@ -96,6 +96,46 @@ print(hyper_to_sentinel2(.2, .21))
 print(hyper_to_sentinel2(.57, .67))
 
 
+# Improved representation of Sentinel-2 bands
+sentinel_bands = [
+    {"name": "Band 1 - Coastal blue", "min_wv": 423, "max_wv": 463},
+    {"name": "Band 2 - Blue", "min_wv": 457.5, "max_wv": 522.5},
+    {"name": "Band 3 - Green", "min_wv": 542.5, "max_wv": 577.5},
+    {"name": "Band 4 - Red", "min_wv": 650, "max_wv": 680},
+    {"name": "Band 5 - Vegetation Red Edge 1", "min_wv": 697.5, "max_wv": 712.5},
+    {"name": "Band 6 - Vegetation Red Edge 2", "min_wv": 732.5, "max_wv": 747.5},
+    {"name": "Band 7 - Vegetation Red Edge 3", "min_wv": 773, "max_wv": 793},
+    {"name": "Band 8 - Leaf Area Index (LAI)", "min_wv": 784.5, "max_wv": 899.5},
+    {"name": "Band 8a - Water vapour absorption reference", "min_wv": 855, "max_wv": 875},
+    {"name": "Band 9 - Water Vapour absorption atmospheric correction", "min_wv": 935, "max_wv": 955},
+    {"name": "Band 10 - Detection of thin cirrus for atmospheric correction", "min_wv": 1360, "max_wv": 1390},
+    {"name": "Band 11 - Soils detection", "min_wv": 1565, "max_wv": 1655},
+    {"name": "Band 12 - AOT determination", "min_wv": 2100, "max_wv": 2280}
+]
+
+#More elegant code:
+
+# Function to match wavelength range to Sentinel-2 bands
+def hyper_to_sentinel2_v2(range_min, range_max):
+    matching_bands = []
+    for band in sentinel_bands:
+        # Check if the given range overlaps with the band's range
+        if not (range_max < band["min_wv"] or range_min > band["max_wv"]):
+            matching_bands.append(band["name"])
+    
+    if matching_bands:
+        return "Matching bands: " + ", ".join(matching_bands)
+    else:
+        return "No matching bands found for the given range."
+
+# Example usage
+print(hyper_to_sentinel2_v2(750, 800))  # An example call to this function
+
+
+
+
 #Make a NEON hyperspectral instrument specific function
+
+
 
 #Move on to where DNs are on the curve

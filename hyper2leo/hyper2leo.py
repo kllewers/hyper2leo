@@ -1,3 +1,6 @@
+import h5py
+help(h5py)
+
 #GENERAL FUNCTIONS
 def um_to_nm(um_measurement: float or int) -> float or int:
     nm_measurement = um_measurement * 1000
