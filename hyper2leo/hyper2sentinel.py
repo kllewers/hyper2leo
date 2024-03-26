@@ -118,12 +118,17 @@ sentinel_bands = [
 # Function to match wavelength range to Sentinel-2 bands
 def hyper_to_sentinel2_v2(range_min, range_max):
     matching_bands = []
+    matching_bands_min = []
+    matching_bands_max = []
     for band in sentinel_bands:
         # Check if the given range overlaps with the band's range
         if not (range_max < band["min_wv"] or range_min > band["max_wv"]):
             matching_bands.append(band["name"])
+            matching_bands_min.append(band["min_wv"])
+            matching_bands_max.append([band["max_wv"]])
     
     if matching_bands:
+        #Add a loop here
         return "Matching bands: " + ", ".join(matching_bands)
     else:
         return "No matching bands found for the given range."
