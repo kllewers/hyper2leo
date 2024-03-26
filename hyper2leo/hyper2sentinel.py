@@ -127,9 +127,11 @@ def hyper_to_sentinel2_v2(range_min, range_max):
         return "Matching bands: " + ", ".join(matching_bands)
     else:
         return "No matching bands found for the given range."
+    
+#Add the function to also include the ranges of the returned matching bands
 
 # Example usage
-print(hyper_to_sentinel2_v2(750, 800))  # An example call to this function
+print(hyper_to_sentinel2_v2(600, 900))  # An example call to this function
 
 
 
